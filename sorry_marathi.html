@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ek Chhotishi Sorry 💗</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;padding:28px 14px;display:flex;align-items:center;justify-content:center;
+  overflow-x:hidden;background:linear-gradient(135deg,#ffe4ed,#ffc7dc,#fff1f6);
+  color:#783b55;font-family:"Segoe UI",Arial,sans-serif
+}
+.container{width:100%;max-width:460px;text-align:center;position:relative;z-index:2}
+.eyebrow{font-size:11px;letter-spacing:3px;color:#a75c79;margin-bottom:14px}
+h1{font-size:clamp(27px,7vw,35px);color:#bd4777;margin-bottom:10px}
+.subtitle{font-size:15px;line-height:1.7;margin:0 auto 25px;max-width:340px}
+.envelope-wrap{padding:25px 0 10px}
+.envelope{
+  width:210px;height:140px;margin:auto;position:relative;cursor:pointer;
+  background:#ee91b2;border-radius:8px;box-shadow:0 14px 28px #9b45652b;
+  transition:transform .3s
+}
+.envelope:hover{transform:translateY(-5px)}
+.envelope:before{
+  content:"";position:absolute;inset:0;background:#d9779d;
+  clip-path:polygon(0 0,50% 62%,100% 0);transform-origin:top;
+  transition:transform .8s;z-index:3
+}
+.envelope:after{
+  content:"💗";position:absolute;top:53%;left:50%;
+  transform:translate(-50%,-50%);font-size:34px;z-index:4
+}
+.envelope.open:before{transform:rotateX(180deg)}
+.hint{font-size:14px;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.letter{
+  display:none;background:#fffafd;border:1px solid #ffe0eb;border-radius:22px;
+  padding:25px 22px;margin-top:25px;text-align:left;line-height:1.85;
+  box-shadow:0 15px 40px #9b45651c;animation:appear .8s ease
+}
+.letter.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+.letter h2{text-align:center;color:#c24779;margin-bottom:18px;font-size:23px}
+.letter p{font-size:14px;margin:0 0 13px}
+.signature{text-align:right;color:#bd4777;font-weight:700;margin-top:18px}
+button{
+  border:0;border-radius:30px;padding:12px 22px;background:#d94f86;color:white;
+  font-size:14px;cursor:pointer;margin:18px auto 0;display:block;
+  box-shadow:0 6px 15px #d94f8635;transition:transform .2s
+}
+button:hover{transform:scale(1.05)}
+.final{
+  display:none;text-align:center;background:#ffeaf1;padding:16px;border-radius:15px;
+  margin-top:16px;line-height:1.8;font-size:14px;animation:appear .7s ease
+}
+.final.show{display:block}
+.footer{font-size:12px;color:#a76b80;margin-top:23px}
+.heart{position:fixed;bottom:-35px;pointer-events:none;z-index:1;animation:floatUp linear forwards}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+@media(max-width:380px){.letter{padding:21px 17px}.letter p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="container">
+  <div class="eyebrow">A LITTLE MESSAGE FOR YOU 💌</div>
+  <h1>Heyyy You! 🥺💗</h1>
+  <p class="subtitle">Ek chhotishi goshta sangaychi aahe...<br>Shevatparyant vachshil ka? 🌷</p>
+
+  <div class="envelope-wrap">
+    <div class="envelope" id="envelope" role="button" tabindex="0"
+         aria-label="Open the letter" onclick="openLetter()"
+         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLetter()}"></div>
+  </div>
+  <p class="hint" id="hint">Letter open kar na! 🥹</p>
+
+  <section class="letter" id="letter" aria-live="polite">
+    <h2>I'm Really Sorry! 🥺❤️</h2>
+    <p>Heyy,</p>
+    <p>Mala mahit nahi he kasa sangaycha, pan try karto...</p>
+    <p>Honestly, mala girls sobat bolnyacha kahi experience nahiye. Tuzyashi bolna hi majhyasathi ek veglich goshta aahe. First time aahe asa konashi itka boltoy.</p>
+    <p>Kadhi kadhi mala kalat nahi kay bolaycha, kasa react karaycha kiwa conversation kashi continue karaychi. Kadhachit tyamule mi kahi weird bollo asen kiwa nakalat tula hurt kela asel.</p>
+    <p>Tyasathi genuinely SORRYYY! 🥺</p>
+    <p>Maza intention kadhi tula hurt karaycha navhta. Mala fakt tuzyashi changla bolaycha aahe, tula samjun ghyaycha aahe ani haluhalu ekmekanna olakhaycha aahe.</p>
+    <p>Mi perfect nahiye, kadhi mistakes pan hotil, pan fake banun vagaycha nahi. Jasa aahe tasa tuzyashi bolaycha aahe.</p>
+    <p>Ani ho, tuzyashi bolayla mala nakkich avadta. ❤️</p>
+    <p>So, majhya awkward moments ani chukansathi ek chhotishi maafi accept karshil ka? No pressure. Fakt ek genuine sorry! 🌷</p>
+    <p class="signature">Take care & smile kart raha!<br>— Someone who's still learning to talk to you 💗</p>
+    <button type="button" onclick="showFinal()">Ajun ek chhota message aahe... 💌</button>
+    <div class="final" id="final">
+      P.S. Mala conversation karayla ajun shikaychay...<br>
+      patience thevshil na majhyasobat? 😂❤️<br><br>
+      <strong>Thank you for reading! 🌸</strong>
+    </div>
+  </section>
+  <p class="footer">Made with a little courage & lots of pink hearts 💗</p>
+</main>
+
+<script>
+function openLetter(){
+  const envelope=document.getElementById('envelope');
+  const letter=document.getElementById('letter');
+  if(letter.classList.contains('show')) return;
+  envelope.classList.add('open');
+  document.getElementById('hint').textContent='Awww, thank you for opening it! 💗';
+  setTimeout(()=>{
+    letter.classList.add('show');
+    letter.scrollIntoView({behavior:'smooth',block:'nearest'});
+    burstHearts();
+  },450);
+}
+function showFinal(){
+  const finalMessage=document.getElementById('final');
+  finalMessage.classList.add('show');
+  finalMessage.scrollIntoView({behavior:'smooth',block:'nearest'});
+  burstHearts();
+}
+function makeHeart(){
+  const heart=document.createElement('span');
+  heart.className='heart';
+  heart.textContent=['💗','💕','💖','🌸','✨'][Math.floor(Math.random()*5)];
+  heart.style.left=Math.random()*100+'vw';
+  heart.style.fontSize=(14+Math.random()*18)+'px';
+  heart.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),10500);
+}
+setInterval(makeHeart,650);
+function burstHearts(){
+  for(let i=0;i<16;i++) setTimeout(makeHeart,i*90);
+}
+</script>
+</body>
+</html>
